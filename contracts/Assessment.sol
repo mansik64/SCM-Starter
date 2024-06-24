@@ -57,4 +57,13 @@ contract Assessment {
         // emit the event
         emit Withdraw(_withdrawAmount);
     }
+    function d500() public view returns(uint256 ){
+        return balance/500;
+    }
+    function d100() public view returns(uint256 ){
+        return (balance%500)/100;
+    }
+    function d50() public view returns(uint256 ){
+        return (balance%100)/50;
+    }
 }

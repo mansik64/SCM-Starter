@@ -7,6 +7,10 @@ export default function HomePage() {
   const [account, setAccount] = useState(undefined);
   const [atm, setATM] = useState(undefined);
   const [balance, setBalance] = useState(undefined);
+    const [dm500, setD500] = useState(0);
+  const [dm100, setD100] = useState(0);
+  const [dm50, setD50] = useState(0);
+
 
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const atmABI = atm_abi.abi;
@@ -88,6 +92,7 @@ export default function HomePage() {
 
     if (balance == undefined) {
       getBalance();
+      domination();
     }
 
     return (
@@ -96,9 +101,22 @@ export default function HomePage() {
         <p>Your Balance: {balance}</p>
         <button onClick={deposit}>Deposit 1 ETH</button>
         <button onClick={withdraw}>Withdraw 1 ETH</button>
+
+     <p>Balance in domination of 500,100 and 50</p>
+        <p>No. of 500 : {dm500}</p>
+        <p>No. of 100 : {dm100}</p>
+        <p>No. of 50  : {dm50}</p>
+        
       </div>
     )
   }
+const domination=async()=>{
+    if (atm) {
+      setD500((await atm.d500()).toNumber());
+      setD100((await atm.d100()).toNumber());
+      setD50((await atm.d50()).toNumber());
+    }
+}
 
   useEffect(() => {getWallet();}, []);
 

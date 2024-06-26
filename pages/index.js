@@ -6,7 +6,7 @@ export default function HomePage() {
   const [ethWallet, setEthWallet] = useState(undefined);
   const [account, setAccount] = useState(undefined);
   const [atm, setATM] = useState(undefined);
-  const [balance, setBalance] = useState(undefined);
+  const [balance, setBalance] = useState(0);
     const [dm500, setD500] = useState(0);
   const [dm100, setD100] = useState(0);
   const [dm50, setD50] = useState(0);

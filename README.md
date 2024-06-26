@@ -1,3 +1,8 @@
+This is a smart contract which manages a simple account with deposit and withdrawal functionality. 
+Only the owner can perform deposits and withdrawals.
+It includes events to log these actions and functions to calculate the number of 500, 100, and 50 units in the balance.
+
+
 # Starter Next/Hardhat Project
 
 After cloning the github, you will want to do the following to get the code running on your computer.
